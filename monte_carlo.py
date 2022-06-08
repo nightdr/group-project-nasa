@@ -9,6 +9,7 @@ class MonteCarlo():
 
     def sample(self, num_samples):
         result = np.zeros(num_samples)
-        
-
+        for i in range(num_samples):
+            theta = np.random.choice(self.theta_distribution)
+            result[i] = self.model.evaluate_distance(theta) 
         return result
